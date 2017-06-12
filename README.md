@@ -1,4 +1,4 @@
-#Animate.css
+#Animate.css [![GitHub release](https://img.shields.io/github/release/daneden/animate.css.svg)](https://github.com/daneden/animate.css/releases) [![Build Status](https://travis-ci.org/WarenGonzaga/animate.css.svg?branch=master)](https://travis-ci.org/WarenGonzaga/animate.css) [![devDependencies Status](https://david-dm.org/WarenGonzaga/animate.css/dev-status.svg)](https://david-dm.org/WarenGonzaga/animate.css?type=dev) [![chat](https://img.shields.io/badge/chat-gitter-green.svg)](https://gitter.im/animate-css/Lobby)
 *Just-add-water CSS animation*
 
 `animate.css` is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness.
@@ -10,6 +10,11 @@ To install via Bower, simply do the following:
 ```bash
 $ bower install animate.css --save
 ```
+or you can install via npm:
+
+```bash
+$ npm install animate.css --save
+```
 
 ##Basic Usage
 1. Include the stylesheet on your document's `<head>`
@@ -19,10 +24,10 @@ $ bower install animate.css --save
     <link rel="stylesheet" href="animate.min.css">
   </head>
   ```
-  or use the version hosted by [SmallCDN](http://smallcdn.rocks)
+  or use the version hosted by [CDNJS](https://cdnjs.com/libraries/animate.css)
   ```html
   <head>
-    <link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   </head>
   ```
 2. Add the class `animated` to the element you want to animate.
@@ -85,6 +90,7 @@ $ bower install animate.css --save
   * `rotateOutUpLeft`
   * `rotateOutUpRight`
   * `hinge`
+  * `jackInTheBox`
   * `rollIn`
   * `rollOut`
   * `zoomIn`
@@ -121,10 +127,10 @@ To use animate.css in your website, simply drop the stylesheet into your documen
   <link rel="stylesheet" href="animate.min.css">
 </head>
 ```
-or use the version hosted by [SmallCDN](http://smallcdn.rocks)
+or use the version hosted by [CDNJS](https://cdnjs.com/libraries/animate.css)
 ```html
 <head>
-  <link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 ```
 
@@ -146,7 +152,7 @@ http://api.jquery.com/one/
 $('#yourElement').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', doSomething);
 ```
 
-[View a video tutorial](https://www.youtube.com/watch?v=CBQGl6zokMs) on how to use Animate.css with jQuery here. 
+[View a video tutorial](https://www.youtube.com/watch?v=CBQGl6zokMs) on how to use Animate.css with jQuery here.
 
 **Note:** `jQuery.one()` is used when you want to execute the event handler at most *once*. More information [here](http://api.jquery.com/one/).
 
@@ -156,7 +162,7 @@ You can also extend jQuery to add a function that does it all for you:
 $.fn.extend({
     animateCss: function (animationName) {
         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-        $(this).addClass('animated ' + animationName).one(animationEnd, function() {
+        this.addClass('animated ' + animationName).one(animationEnd, function() {
             $(this).removeClass('animated ' + animationName);
         });
     }
